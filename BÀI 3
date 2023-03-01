@@ -1,0 +1,47 @@
+#include <conio.h>
+#include <stdio.h>
+struct Diem {
+float x,y;
+}
+typedef struct Diem DIEM ;
+void NhapDiem(DIEM&);
+void XuatDiem(DIEM&;
+struct DuongTron{
+DIEM I;
+float R;
+typedef struct DuongTron DUONGTRON;
+void NhapDuongTron(DUONGTRONG&);
+void XuatDuongTron(DUONGTRONG&);
+void NhapDiem(DIEM&);
+{
+float temp;
+printf ("\nNhap x:");
+scanf("%f, &temp);
+d.y=temp;
+}
+void XuatDiem(DIEM d)
+{
+printf ("(%8.3f,%8.3f)",d.x,d.y);
+  }
+  void NhapDuongTron(DUONGTRONG&);{
+  float temp;
+  NhapDiem(dt.I);
+  printf ("\nNhap ban kinh:");
+  scanf("%f, &temp);
+  dt.R=temp;
+  }
+  void XuatDuongTron(DUONGTRONG&);
+  {
+  printf ("((%8.3f,%8.3f),%8.3f)",dt.I.x,dt.I.y,dt.R));
+  }
+  int main()
+  {
+  DIEM d;
+  DUONGTRON dt;
+  NhapDuongTron(dt);
+  XuatDuongTron(dt);
+  getch();
+  return 0;
+  }
+  
+  

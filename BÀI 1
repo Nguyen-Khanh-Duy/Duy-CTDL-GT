@@ -1,0 +1,44 @@
+#include <conio.h>
+#include <stdio.h>
+struct honso
+{
+	int tuso;
+	int mauso;
+	int songuyen;
+	int honsorutgon;
+};
+typedef struct honso HONSO;
+void nhap(HONSO &x);
+void xuly(HONSO &x);
+void xuat(HONSO x);
+void main ()
+{
+	HONSO hs;
+	nhap(hs);
+	xuly(hs);
+	xuat(hs);
+	getch();
+}
+void nhap(HONSO &x)
+{
+	printf("
+Nhap So Nguyen :");
+	scanf("%d",&x.songuyen);
+	printf("
+Nhap Tu So :");
+	scanf("%d",&x.tuso);
+	printf("
+Nhap Mau So :");
+	scanf("%d",&x.mauso);
+}
+void xuly(HONSO &x)
+{
+	x.honsorutgon=((x.songuyen*x.mauso)+x.tuso)/x.mauso;
+}
+void xuat(HONSO x)
+{
+	printf("
+Hon So Rut Gon La : %d/%d",x.honsorutgon);
+}
+
+

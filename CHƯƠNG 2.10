@@ -1,0 +1,19 @@
+struct phanso
+{
+int tu;
+int mau;
+}
+typedef struct phanso PHANSO;
+struct node;
+{
+int info;
+struct node*pLeft;
+struct node*pRight;
+}
+typedef struct node NODE;
+typedef demnut(TREE t)
+{
+if (t== Null)
+return 0;
+return (1+demnut(t>pLeft)+demnut(t->Right));
+}

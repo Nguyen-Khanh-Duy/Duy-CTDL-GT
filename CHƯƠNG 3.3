@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#define MAX 100
+  void nhap(int a[],int a&n){
+    do{
+   printf("\nNhap so phan tu:")
+   scanf(%d",&n);
+   if(in<=0|| n>MAX)
+   {
+   printf("\nso phan tu ko hop le":);
+    }
+   }
+   while (n<=0||n>MAX);
+   for (int i=0;i<n;i++)
+   {
+   print("\nNhapa[%d]:",i);
+   scanf("%d",&a[i]);
+   }
+   }
+   void xuat(int a[],int n)
+   {
+   for (int i=0;i<n;i++)
+   {
+   printf("%4d",a[i]);
+   }
+   }
+   void hoanvi(int &a,int &b)
+   {
+   int temp=a;
+   a=b;
+   b=temp;
+   }
+   void sapxepletangdan(int a[], int n)
+   {
+   for(int i=0; i<n-1;i++)
+   {
+   if(a[i]%2!=0)
+   {
+   for(int j=i+1;j<n;j++)
+   {
+   if(a[j]%2!=0 && a[i] >a[j])
+   {
+   hoanvi(a[i],a[j]);
+   }
+   }
+   }
+   }
+   int main()
+   {
+   int n;
+   int a[MAX];
+   nhap (a,n);
+   xuat(a,n);
+   sapxepletangdan(a,n);
+   printf("\nmang sau khi sap xep le tang dan:");
+   xuat(a,n);
+   getch();
+   return 0;
+   }
+   
+   
+    
+    
+

@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#define MAX 100
+void nhap(inta[],int &n){
+do
+{
+printf("\nnhap phantu:");
+scanf ("%d",&n);
+if(n<=n||MAX) 
+{
+printf("\nso phan tu ko hop le:");
+}
+}
+while (n<=0||n>MAX);
+for(int i=0;i<n,i++)
+{
+printf("\nnnhap a[%d]:",i);
+scanf("%d",&a[i]);
+}
+}
+void xuat(int a[],int n)
+{
+for (int i=0; i<n;i++)
+{
+printf("%4d",a[i])
+}
+}
+int kiemtranguyento(int n)
+{
+if(n<2)
+{
+return;
+}
+else if(n>2)
+{
+return 0;
+}
+for(int i=3;i<=sqrt((float)n);i+=2)
+{
+if (n%i==0)
+{
+return 0;
+}
+}
+}
+return 1;
+}
+void hoanvi(int &a,int &b)
+{
+int temp=a;
+a=b;
+b=temp;
+}
+void sapxeptangdan(int a[], int n)
+{
+for (int i=0;i<n-1 ;i++)
+{
+if(kiemtranguyento(a[j])==1&&a[i]>a[j])
+{
+hoanvi(a[i],a[j]);
+}
+}
+}
+}
+}
+int main()
+{
+int n;
+int a[MAX];
+nhap (a,n);
+xuat(a,n);
+sapxepnguyentotangdan(a,n);
+printf("mang sau khi sap xep tanng:");
+xuat(a,n);
+getch();
+return 0;
+}
+
+

@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+#define MAXSIZE 100
+
+class Stack {
+    int top; // biến vị trí của phần tử đầu tiên trong stack
+    int arr[MAXSIZE]; // mảng để lưu các phần tử trong stack
+
+public:
+    Stack() { top = -1; } // khởi tạo giá trị ban đầu của biến vị trí
+
+    bool push(int x); // hàm thêm một phần tử vào stack
+    int pop(); // hàm loại bỏ phần tử trên đỉnh stack và trả về giá trị của phần tử đó
+    int peek(); // hàm trả về giá trị của phần tử đang nằm trên đỉnh stack
+    bool isEmpty(); // hàm kiểm tra xem stack có rỗng hay không
+};
+
+bool Stack::push(int x) {
+    if (top >= (MAXSIZE - 1)) { // kiểm tra xem stack đã đầy hay chưa
+        cout << "Stack overflow" << endl;
+        return false;
+    }
+    else {
+        arr[++top] = x; // tăng biến vị trí lên 1 và thêm phần tử vào vị trí mới
+        return true;
+    }
+}
+
+int Stack::pop() {
+    if (top < 0) { // kiểm tra xem stack đã rỗng hay chưa
+        cout << "Stack underflow" << endl;
+        return 0;
+    }
+    else {
+        int x = arr[top--]; // giảm biến vị trí đi 1 và trả về giá trị của phần tử đỉnh
+        return x;
+    }
+}
+
+int Stack::peek() {
+    if (top < 0) { // kiểm tra xem stack đã rỗng hay chưa
+        cout << "Stack is empty" << endl;
+        return 0;
+    }
+    else {
+        int x = arr[top]; // trả về giá trị của phần tử đỉnh
+        return x;
+    }
+}
+
+bool Stack::isEmpty() {
+    return (top < 0); // kiểm tra xem stack có rỗng hay không
+}
+
+int main() {
+    Stack s;
+    int arr[] = { 41, 23, 4, 14, 56, 1 };
+
+    for (int i = 0; i < 6; i++) {
+        s.push(arr[i]); // thêm các phần tử của mảng vào stack
+    }
+
+    int top = s.pop(); // lấy giá trị trên đỉnh stack và gán vào biến top
+    cout << "Top of stack: " << top << endl;
+
+    cout << "Stack content: ";
+    while (!s.isEmpty()) { // in các phần tử trong stack
+        cout << s.pop() << " ";
+    }
+    cout << endl;
+
+    return 0;
+}

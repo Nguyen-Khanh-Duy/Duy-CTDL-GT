@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+float timgiatrilonnhatdequy(float arr[], int n) {
+    // Base case: mảng chỉ có 1 phần tử
+    if (n == 1) {
+        return arr[0];
+    }
+    // Đệ quy tìm giá trị lớn nhất trong mảng con bên phải
+    float max = timgiatrilonnhatdequy(arr, n - 1);
+    // So sánh giá trị lớn nhất trong mảng con bên phải với giá trị của phần tử cuối cùng trong mảng hiện tại
+    if (arr[n-1] > max) {
+        max = arr[n-1];
+    }
+    return max;
+}
+
+int main() {
+    float arr[5] = {3.5, -2.0, 7.1, 1.8, -5.6};
+    int n = 5;
+    float max = timgiatrilonnhatdequy(arr, n);
+    printf("Gia tri lon nhat trong mang la: %f", max);
+    return 0;
+}

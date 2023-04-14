@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int kiemtramang(float arr[], int n) {
+    if (n == 0) {
+        return 1; // mảng rỗng được xem là toàn giá trị âm
+    }
+    if (arr[n-1] >= 0) {
+        return 0; // nếu phần tử cuối cùng không âm thì mảng không toàn giá trị âm
+    }
+    return kiemtramang(arr, n-1); // kiểm tra phần tử tiếp theo
+}
+
+int main() {
+    float arr[] = {-1, -2, -3, -4, -5};
+    int n = sizeof(arr)/sizeof(float);
+    if (kiemtramang(arr, n)) {
+        printf("Mang toan gia tri am");
+    } else {
+        printf("Mang khong toan gia tri am");
+    }
+    return 0;
+}

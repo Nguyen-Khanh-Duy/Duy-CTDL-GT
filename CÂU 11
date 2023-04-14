@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int demsoluongdequy(float arr[], int n, int i) {
+    // Nếu đã duyệt hết mảng, trả về 0
+    if (i >= n) {
+        return 0;
+    }
+    // Nếu giá trị tại vị trí i lớn hơn 0, tăng biến đếm lên 1 và đệ quy tiếp đến vị trí tiếp theo
+    if (arr[i] > 0) {
+        return 1 + demsoluongdequy(arr, n, i + 1);
+    }
+    // Nếu giá trị tại vị trí i không lớn hơn 0, chỉ đệ quy tiếp đến vị trí tiếp theo
+    return demsoluongdequy(arr, n, i + 1);
+}
+
+int main() {
+    float arr[] = {1.5, -2.5, 3.0, 4.5, -5.0, 6.5, -7.0};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int count = demsoluongdequy(arr, n, 0);
+    cout << "So luong gia tri duong trong mang: " << count << endl;
+    return 0;
+}
